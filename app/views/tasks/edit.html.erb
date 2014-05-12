@@ -1,0 +1,13 @@
+<div class="row">
+<div class="col-md-3">
+  <h1>Editing task</h1>
+</div>
+<div class="col-md-3">
+  <%= link_to 'Show', @task, {:style=>'color:white;', :class => "btn btn-success"} %> |
+  <%= link_to 'Back', tasks_path, {:style=>'color:white;', :class => "btn btn-warning"} %>
+</div>
+</div>
+
+
+<%= render 'form' %>
+

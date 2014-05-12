@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  deadline: 2014-05-07 14:02:54
+  completed: false
+  date_completed: 2014-05-07 14:02:54
+  priority: 1
+  notes: MyText
+  links: MyString
+  category: MyString
+  sub_category: 
+  contact: MyString
+  location: MyString
+  comm_info: MyString
+  last_worked_on: 2014-05-07 14:02:54
+
+two:
+  name: MyString
+  deadline: 2014-05-07 14:02:54
+  completed: false
+  date_completed: 2014-05-07 14:02:54
+  priority: 1
+  notes: MyText
+  links: MyString
+  category: MyString
+  sub_category: 
+  contact: MyString
+  location: MyString
+  comm_info: MyString
+  last_worked_on: 2014-05-07 14:02:54
