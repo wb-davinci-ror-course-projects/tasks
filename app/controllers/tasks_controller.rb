@@ -24,6 +24,9 @@ class TasksController < ApplicationController
   def show
   end
   
+  def calendar
+  end
+  
   def notes
     @task = Task.find(params[:id])
   end
@@ -46,9 +49,10 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
-
     respond_to do |format|
       if @task.save
+        @task.just_date = @task.deadline.to_date
+        @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render action: 'show', status: :created, location: @task }
       else
@@ -63,6 +67,8 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
+        @task.just_date = @task.deadline.to_date
+        @task.save
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { head :no_content }
       else

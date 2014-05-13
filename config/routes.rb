@@ -1,5 +1,6 @@
 Mine::Application.routes.draw do
 
+get "/tasks/calendar" =>  "tasks#calendar", as: "calendar"
 get "/tasks/archive" =>  "tasks#archive", as: "archive"
 get "/tasks/notes/:id" =>  "tasks#notes", as: "notes"
 

@@ -8,7 +8,7 @@
       <%= link_to 'New Task', new_task_path, {:style=>'color:black;', :class => 'btn btn-default'} %>
       <a style="color: rgba(6, 72, 133, 0.85); text-shadow: 2px 2px white;" href="http://www.weather.com/weather/hourbyhour/graph/80227">Hourly Weather</a>
       <a style="color: green; text-shadow: 2px 2px white;" href="http://finance.yahoo.com/q;_ylt=AsCON6EETHyuQCXV57HQ93Inv7gF?uhb=uh3_finance_vert_gs_ctrl2&fr=uh3_finance_vert_gs_ctrl2_e&type=2button&s=c">Quote "C"</a>
-    </div>
+      <a href="/tasks/calendar" style="color: blue">calendar</a>
   </div>
 </div>
 <div class="container row">
@@ -74,8 +74,10 @@
     <% end %>
   </tbody>
 </table>
+Today's prediction....
 
-<!--
+<!-- %= predict_arr[rand(predict_arr.length)] %>
+
 % @locations.each do |location| %>    
   <td>%= location.city %></td>
   <td>%= location.state_code %></td>
