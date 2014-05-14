@@ -43,7 +43,7 @@
             </div>
         </td>
         <td width="150">
-          <% if Time.now.day >= task.deadline.day %>
+          <% if Time.now >= task.deadline - (60*60*24)%>
             <p style="color: red"><%= task.name %></p>
           <% else %>
             <%= task.name %>
