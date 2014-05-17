@@ -32,7 +32,7 @@
         <td><p style="color: #550808"><%= task.category %></p></td>
         <td><%= link_to 'Show', task, {:style=>'color:white;', :class => "btn btn-success"} %></td>
         <td><%= link_to 'Edit', edit_task_path(task), {:style=>'color:white;', :class => "btn btn-info"} %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary', :style => 'color: white;'%></td>
       </tr>
     <% end %>
     <% end %>

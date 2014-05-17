@@ -57,7 +57,7 @@
         <% else %>
           <td width="25"><center><%= task.priority %></center></td>
         <% end %>
-        <td width="100"><p style="color: black"><%= task.notes.chars[0..20].join %></p>
+        <td width="100"><p style="color: rgba(6, 72, 133, 0.85)"><%= task.notes.chars[0..20].join %></p>
         <% if task.notes.length > 20 %>
           <u><a href="/tasks/notes/<%= task.id %>" style="color: rgba(6, 72, 133, 0.85)">more...</a></u></td>
         <% end %>
