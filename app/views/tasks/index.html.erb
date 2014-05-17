@@ -1,14 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 pull-left">
-      <h1 style="color: rgba(153, 130, 9, 0.86); text-shadow: 2px 2px 4px white;"><%= Date.today.strftime( "%A" ) %><i>tasks</i></h1>
+      <h1 style="color: #1E5A53; text-shadow: 1px 4px 1px white;"><%= Date.today.strftime( "%A" ) %><i>tasks</i></h1>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-8">
+      <%= link_to 'New Task', new_task_path, {:style=>'color:#927017;', :class => 'btn btn-default'} %>
+      <%= link_to "Priority", tasks_path(:priority), {:style=>'color:white;', :class => 'btn btn-success'} %>
       <%= link_to 'Archive', archive_path, {:style=>'color:white;', :class => 'btn btn-primary'} %>
-      <%= link_to 'New Task', new_task_path, {:style=>'color:black;', :class => 'btn btn-default'} %>
-      <a style="color: rgba(6, 72, 133, 0.85); text-shadow: 2px 2px white;" href="http://www.weather.com/weather/hourbyhour/graph/80227">Hourly Weather</a>
-      <a style="color: green; text-shadow: 2px 2px white;" href="http://finance.yahoo.com/q;_ylt=AsCON6EETHyuQCXV57HQ93Inv7gF?uhb=uh3_finance_vert_gs_ctrl2&fr=uh3_finance_vert_gs_ctrl2_e&type=2button&s=c">Quote "C"</a>
-      <a href="/tasks/calendar" style="color: blue">calendar</a>
+      <a class="btn btn-info" style="color: white;" href="http://www.weather.com/weather/hourbyhour/graph/80227">Weather</a>
+      <a class="btn btn-primary" style="color: white;" href="http://finance.yahoo.com/q;_ylt=AsCON6EETHyuQCXV57HQ93Inv7gF?uhb=uh3_finance_vert_gs_ctrl2&fr=uh3_finance_vert_gs_ctrl2_e&type=2button&s=c">Quote</a>
+      <a class="btn btn-success" style="color: white;" href="/tasks/calendar">Calendar</a>
   </div>
 </div>
 <div class="container row">
@@ -30,7 +31,6 @@
     </tr>
   </thead>
 
-<%= link_to "Order by Priority", tasks_path(:priority), {:style=>'color:white;', :class => 'btn btn-success'} %>
   <tbody>
     <% @tasks.order(:priority).each do |task| %>
       <tr>
@@ -45,7 +45,7 @@
         </td>
         <td width="150">
           <% if Time.now >= task.deadline - (60*60*24)%>
-            <p style="color: #C03333"><%= task.name %></p>
+            <p style="color: #927017"><b><%= task.name %></b></p>
           <% else %>
             <%= task.name %>
           <% end %>
@@ -53,23 +53,23 @@
         <td width="50" align="left" valign="top"><%= task.last_worked_on.strftime("%b/%-d") %></td>
         <td width="75"><b><%= task.deadline.strftime("%a, %d @ %H:%M") %></b></td>
         <% if task.priority == 1 %>
-          <td width="25"><center><p style="color: red"><%= task.priority %></p></center></td>
+          <td width="25"><center><p style="color: #927017"><b><%= task.priority %></b></p></center></td>
         <% else %>
           <td width="25"><center><%= task.priority %></center></td>
         <% end %>
         <td width="100"><p style="color: black"><%= task.notes.chars[0..20].join %></p>
         <% if task.notes.length > 20 %>
-          <u><a href="/tasks/notes/<%= task.id %>" style="color: blue">more...</a></u></td>
+          <u><a href="/tasks/notes/<%= task.id %>" style="color: rgba(6, 72, 133, 0.85)">more...</a></u></td>
         <% end %>
         <td><%= task.links.chars[0..10].join %></td>
-        <td><p style="color: #550808"><%= task.category.chars[0..7].join %></p></td>
-        <td><p style="color: green"><%= task.sub_category.chars[0..8].join %></td>
+        <td><p style="color: gray"><%= task.category.chars[0..7].join %></p></td>
+        <td><p style="color: silver"><%= task.sub_category.chars[0..8].join %></td>
         <td><%= task.contact %></td>
-        <td><p style="color: purple"><%= task.location %></p></td>
+        <td><p style="color: rgba(6, 72, 133, 0.85)"><%= task.location %></p></td>
         <td><%= task.comm_info.chars[0..12].join %></td>
         <td><%= link_to 'Show', task, {:style=>'color:white;', :class => 'btn btn-success'} %></td>
         <td><%= link_to 'Edit', edit_task_path(task), {:style=>'color:white;', :class => 'btn btn-info'} %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger', :style => 'color: white;'%></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary', :style => 'color: white;'%></td>
       </tr>
       <% end %>
     <% end %>
@@ -98,6 +98,6 @@ Today's prediction....
 
 
 
-TO DO: - calendar page - user_id on the task table - scaffold user 
+TO DO: scaffold user, print notes prettier
 
 

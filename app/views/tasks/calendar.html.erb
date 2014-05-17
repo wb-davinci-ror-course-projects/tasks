@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
-Calendar
-<table class="table-striped">
+<div class="pull-left">
+  <%= link_to 'Back', tasks_path, {:style=>'color:white;', :class => "btn btn-warning"} %>
+</div>
+<center>
+  <h2 style="color: #1E5A53">Calendar</h2>
+</center><br></br>
+
+<table class="table-striped" width = "1400">
   <thead>
     <tr>
       <th><%= DateTime.now.strftime("%b %a %d") %></th>
@@ -82,4 +88,4 @@ Calendar
   </thead>
  
 
-<%= link_to 'Back', tasks_path, {:style=>'color:white;', :class => "btn btn-warning"} %>
+
