@@ -16,9 +16,13 @@ class TasksController < ApplicationController
 #     else
 #       @locations = Location.order(updated_at: :desc).paginate(:page => params[:page])
 #     end
-    @tasks = Task.order(:deadline).page(params[:page]).per_page(6)
+    if params[:format] == "priority"
+      @tasks = Task.order(:priority).page(params[:page]).per_page(6)
+    else
+      @tasks = Task.order(:deadline).page(params[:page]).per_page(6)
+    end
   end
-
+  
   # GET /tasks/1
   # GET /tasks/1.json
   def show

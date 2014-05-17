@@ -1,169 +1,83 @@
 <p id="notice"><%= notice %></p>
 Calendar
-
 <table class="table-striped">
   <thead>
     <tr>
       <th><%= DateTime.now.strftime("%b %a %d") %></th>
-      <th><%= (Date.today + 1).strftime("%a %d")%></th>
-      <th><%= (Date.today + 2).strftime("%a %d")%></th>
-      <th><%= (Date.today + 3).strftime("%a %d")%></th>
-      <th><%= (Date.today + 4).strftime("%a %d")%></th>
-      <th><%= (Date.today + 5).strftime("%a %d")%></th>
-      <th><%= (Date.today + 6).strftime("%a %d")%></th>
+      <% x = 0 %>
+      <% while x < 6 %>
+      <% x = x + 1 %>
+      <th><%= (Date.today + x).strftime("%a %d")%></th>
+      <% end %>
     </tr>
     <tr>
-       <td width="200" height="100">
-         <%Task.where(just_date: Date.today.to_date).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 1).each do |t| %>
-           <%= t.name %><br>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 2).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 3).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 4).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 5).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 6).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
+      <% x = -1 %>
+      <% while x < 8 %>
+        <% x = x + 1 %>
+          <td width="200" height="100">
+            <%Task.where(just_date: Date.today.to_date + x).each do |t| %>
+               <%= t.name %>
+               <%= t.deadline.strftime("%I:%M") %><br>
+             <%end%>
+           </td>
+      <% end %> 
     </tr>
     <tr>
-    
-   
-      <th><%= (Date.today + 7).strftime("%a %d") %></th>
-      <th><%= (Date.today + 8).strftime("%a %d")%></th>
-      <th><%= (Date.today + 9).strftime("%a %d")%></th>
-      <th><%= (Date.today + 10).strftime("%a %d")%></th>
-      <th><%= (Date.today + 11).strftime("%a %d")%></th>
-      <th><%= (Date.today + 12).strftime("%a %d")%></th>
-      <th><%= (Date.today + 13).strftime("%a %d")%></th>
-      <%= render calendar_header %>
+      <% x = 6 %>
+      <% while x > 5 && x < 13 %>
+      <% x = x + 1 %>
+      <th><%= (Date.today + x).strftime("%a %d")%></th>
+      <% end %>
     </tr>
     <tr>
-       <td width="200" height="100">
-         <%Task.where(just_date: Date.today.to_date + 7).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 8).each do |t| %>
-           <%= t.name %><br>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 9).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 10).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 11).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 12).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 13).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-    </tr>
-   <tr>
-      <th><%= (Date.today + 14).strftime("%a %d") %></th>
-      <th><%= (Date.today + 15).strftime("%a %d")%></th>
-      <th><%= (Date.today + 16).strftime("%a %d")%></th>
-      <th><%= (Date.today + 17).strftime("%a %d")%></th>
-      <th><%= (Date.today + 18).strftime("%a %d")%></th>
-      <th><%= (Date.today + 19).strftime("%a %d")%></th>
-      <th><%= (Date.today + 20).strftime("%a %d")%></th>
+      <% x = 6 %>
+      <% while x > 5 && x < 13 %>
+        <% x = x + 1 %>
+          <td width="200" height="100">
+            <%Task.where(just_date: Date.today.to_date + x).each do |t| %>
+               <%= t.name %>
+               <%= t.deadline.strftime("%I:%M") %><br>
+             <%end%>
+           </td>
+      <% end %> 
     </tr>
     <tr>
-       <td width="200" height="100">
-         <%Task.where(just_date: Date.today.to_date + 14).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 15).each do |t| %>
-           <%= t.name %><br>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 16).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 17).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 18).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 19).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
-       <td width="200" height="100">
-         <% Task.where(just_date: Date.today.to_date + 20).each do |t| %>
-           <%= t.name %>
-           <%= t.deadline.strftime("%I:%M") %><br>
-         <%end%>
-       </td>
+      <% x = 13 %>
+      <% while x > 12 && x < 20 %>
+      <% x = x + 1 %>
+      <th><%= (Date.today + x).strftime("%a %d")%></th>
+      <% end %>
+    </tr>
+    <tr>
+      <% x = 13 %>
+      <% while x > 12 && x < 20 %>
+        <% x = x + 1 %>
+          <td width="200" height="100">
+            <%Task.where(just_date: Date.today.to_date + x).each do |t| %>
+               <%= t.name %>
+               <%= t.deadline.strftime("%I:%M") %><br>
+             <%end%>
+           </td>
+      <% end %> 
+    </tr>
+    <tr>
+      <% x = 20 %>
+      <% while x > 19 && x < 27 %>
+      <% x = x + 1 %>
+      <th><%= (Date.today + x).strftime("%a %d")%></th>
+      <% end %>
+    </tr>
+    <tr>
+      <% x = 20 %>
+      <% while x > 19 && x < 27 %>
+        <% x = x + 1 %>
+          <td width="200" height="100">
+            <%Task.where(just_date: Date.today.to_date + x).each do |t| %>
+               <%= t.name %>
+               <%= t.deadline.strftime("%I:%M") %><br>
+             <%end%>
+           </td>
+      <% end %> 
     </tr>
   </thead>
  

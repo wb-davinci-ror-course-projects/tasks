@@ -30,6 +30,7 @@
     </tr>
   </thead>
 
+<%= link_to "Order by Priority", tasks_path(:priority), {:style=>'color:white;', :class => 'btn btn-success'} %>
   <tbody>
     <% @tasks.order(:priority).each do |task| %>
       <tr>

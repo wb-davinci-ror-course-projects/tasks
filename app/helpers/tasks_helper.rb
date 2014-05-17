@@ -19,6 +19,7 @@ def sub_category_select
   ["Coding"],
   ["MeetUp"],
   ["Bootcamp"],
+  ["Health"],
   ["Budget / Bill"]
   ]
 end
@@ -54,11 +55,4 @@ end
     end
   end
   
-  def calendar_header
-   
-    "<th>#{(Date.today + (6+1)).strftime('%a %d')}</th>".html_safe
-      x = x + 1
-  
-  end
-
 end
