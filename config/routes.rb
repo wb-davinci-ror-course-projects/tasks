@@ -1,5 +1,7 @@
 Mine::Application.routes.draw do
 
+  resources :studies
+
   resources :fit_posts
 
 get "/tasks/calendar" =>  "tasks#calendar", as: "calendar"

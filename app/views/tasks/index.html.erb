@@ -5,6 +5,7 @@
     </div>
     <div class="col-md-8">
       <%= link_to 'New Task', new_task_path, {:style=>'color:#927017;', :class => 'btn btn-default'} %>
+      <%= link_to 'Study', studies_path, {:style=>'color:white;', :class => 'btn btn-primary'} %>
       <%= link_to 'Fit Post', fit_posts_path, {:style=>'color:white;', :class => 'btn btn-info'} %>
       <%= link_to "Priority", tasks_path(:priority), {:style=>'color:white;', :class => 'btn btn-success'} %>
       <%= link_to 'Archive', archive_path, {:style=>'color:white;', :class => 'btn btn-primary'} %>
@@ -76,7 +77,12 @@
     <% end %>
   </tbody>
 </table>
-Today's prediction....
+
+<% Study.all.each do |s| %>
+  <% if s.priority == 1 && DateTime.now.day == s.deadline.day %>
+    <b style="color: #927017"><%= "FYI - Study Task '#{s.name}' is due today" %></b>
+  <% end %>
+<% end %>
 
 <!-- %= predict_arr[rand(predict_arr.length)] %>
 
