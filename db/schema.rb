@@ -11,10 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513211110) do
+ActiveRecord::Schema.define(version: 20140517235208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fit_posts", force: true do |t|
+    t.datetime "date"
+    t.integer  "weight"
+    t.text     "focus"
+    t.string   "breakfast"
+    t.integer  "brk_cals"
+    t.string   "lunch"
+    t.integer  "lunch_cals"
+    t.string   "dinner"
+    t.integer  "dinner_cals"
+    t.integer  "snacks"
+    t.boolean  "water_extract_64oz"
+    t.string   "exercise"
+    t.text     "accomplishment"
+    t.boolean  "model_day"
+    t.boolean  "energy"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "locations", force: true do |t|
     t.string   "city"
