@@ -1,5 +1,7 @@
 Mine::Application.routes.draw do
 
+  resources :careers
+
   resources :studies
 
   resources :fit_posts
