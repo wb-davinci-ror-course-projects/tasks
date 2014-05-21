@@ -49,6 +49,8 @@
         <td width="150">
           <% if Time.now >= task.deadline - (60*60*24)%>
             <p style="color: #927017"><b><%= task.name %></b></p>
+          <% elsif Time.now <= task.deadline - (60*60*24*15)%>
+            <p style="color: silver"><%= task.name %></p>
           <% else %>
             <%= task.name %>
           <% end %>
