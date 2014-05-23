@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
@@ -38,7 +39,20 @@ class TasksController < ApplicationController
   def archive
     @tasks = Task.all.page(params[:page]).per_page(10)
   end
-
+ 
+  def practice1
+    render :practice1, layout: false and return
+  end
+  
+  def practice2
+    render :practice2, layout: false and return
+  end
+  
+   def practice3
+    render :practice3, layout: false and return
+  end
+  
+  
 
   # GET /tasks/new
   def new
@@ -102,4 +116,5 @@ class TasksController < ApplicationController
     def task_params
       params.require(:task).permit(:done_for_today, :name, :deadline, :completed, :date_completed, :priority, :notes, :links, :category, :sub_category, :contact, :location, :comm_info, :last_worked_on)
     end
+  
 end

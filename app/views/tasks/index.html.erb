@@ -13,6 +13,11 @@
       <a class="btn btn-success" style="color: white;" href="/tasks/calendar">Calendar</a>
       <a class="btn btn-gray" style="color: white;" href="http://www.weather.com/weather/hourbyhour/graph/80227">Weather</a>
       <a class="btn btn-gray" style="color: white;" href="http://finance.yahoo.com/q;_ylt=AsCON6EETHyuQCXV57HQ93Inv7gF?uhb=uh3_finance_vert_gs_ctrl2&fr=uh3_finance_vert_gs_ctrl2_e&type=2button&s=c">Quote</a>
+      <% x = 1 %>
+      <% while x > 0 && x < 4 %>
+        <a class="btn btn-gray" style="color: white;" href="/practice<%= x %>">Practice<%= x %></a>
+        <% x += 1 %>
+      <% end %>
   </div>
 </div>
 <div class="container row">
@@ -86,6 +91,9 @@
     <b style="color: #927017"><%= "FYI - Study Task '#{s.name}' is due today" %></b>
   <% end %>
 <% end %>
+
+<script>if("yes" === "yes")
+        console.log("this is a test!!!!!!!!!!!!!!!!!!!!!!!!!!!");</script>
 
 <!-- %= predict_arr[rand(predict_arr.length)] %>
 
