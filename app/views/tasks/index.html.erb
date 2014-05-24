@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "tasks" %>
 <div class="container">
   <div class="row">
     <div class="col-md-4 pull-left">
@@ -40,7 +41,7 @@
   </thead>
 
   <tbody>
-    <% @tasks.each do |task| %>
+    <% @tasks.order(:deadline).each do |task| %>
       <tr>
       <% if task.completed == false %>
         <td><div class="field">
@@ -91,23 +92,7 @@
     <b style="color: #927017"><%= "FYI - Study Task '#{s.name}' is due today" %></b>
   <% end %>
 <% end %>
-
-<script>if("yes" === "yes")
-        console.log("this is a test!!!!!!!!!!!!!!!!!!!!!!!!!!!");</script>
-
-<!-- %= predict_arr[rand(predict_arr.length)] %>
-
-% @locations.each do |location| %>    
-  <td>%= location.city %></td>
-  <td>%= location.state_code %></td>
-  <td>%= location.latitude %></td>
-  <td>%= location.longitude %></td>
-% end %>
-</div>
---!>
-
 <br>
-
 <div class="flickr_pagination">
   <%= will_paginate @tasks %>
 </div>
