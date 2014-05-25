@@ -1,0 +1,89 @@
+<%= form_for(@fit_post) do |f| %>
+  <% if @fit_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fit_post.errors.count, "error") %> prohibited this fit_post from being saved:</h2>
+
+      <ul>
+      <% @fit_post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.datetime_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :focus %><br>
+    <%= f.text_area :focus %>
+  </div>
+  <div class="field">
+    <%= f.label :breakfast %><br>
+    <%= f.text_field :breakfast %>
+  </div>
+  <div class="field">
+    <%= f.label :brk_cals %><br>
+    <%= f.text_field :brk_cals %>
+  </div>
+  <div class="field">
+    <%= f.label :lunch %><br>
+    <%= f.text_field :lunch %>
+  </div>
+  <div class="field">
+    <%= f.label :lunch_cals %><br>
+    <%= f.number_field :lunch_cals %>
+  </div>
+  <div class="field">
+    <%= f.label :dinner %><br>
+    <%= f.text_field :dinner %>
+  </div>
+  <div class="field">
+    <%= f.label :dinner_cals %><br>
+    <%= f.number_field :dinner_cals %>
+  </div>
+  <div class="field">
+    <%= f.label :snacks %><br>
+    <%= f.text_field :snacks %>
+  </div>
+  <div class="field">
+    <%= f.label :snack_cals %><br>
+    <%= f.number_field :snack_cals %>
+  </div>
+  <div class="field">
+    <%= f.label :cal_track_complete %><br>
+    <%= f.check_box :cal_track_complete %>
+  </div>
+  <div class="field">
+    <%= f.label :water_extract_64oz %><br>
+    <%= f.check_box :water_extract_64oz %>
+  </div>
+  <div class="field">
+    <%= f.label :exercise %><br>
+    <%= f.text_field :exercise %>
+  </div>
+  <div class="field">
+    <%= f.label :accomplishment %><br>
+    <%= f.text_area :accomplishment %>
+  </div>
+  <div class="field">
+    <%= f.label :model_day %><br>
+    <%= f.check_box :model_day %>
+  </div>
+  <div class="field">
+    <%= f.label :energy %><br>
+    <%= f.check_box :energy %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

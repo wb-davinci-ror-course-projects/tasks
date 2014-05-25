@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  area: MyString
+  next_up: MyString
+  notes: MyText
+  links: MyString
+  materials: MyString
+  priority: 1
+  last_worked_on: 2014-05-19 09:32:10
+
+two:
+  area: MyString
+  next_up: MyString
+  notes: MyText
+  links: MyString
+  materials: MyString
+  priority: 1
+  last_worked_on: 2014-05-19 09:32:10

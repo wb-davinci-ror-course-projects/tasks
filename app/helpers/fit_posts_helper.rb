@@ -1,0 +1,2 @@
+module FitPostsHelper
+end

@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2014-05-17 17:52:08
+  weight: 1
+  focus: MyText
+  breakfast: MyString
+  brk_cals: 1
+  lunch: MyString
+  lunch_cals: 1
+  dinner: MyString
+  dinner_cals: 1
+  snacks: MyString
+  snacks: 1
+  water_extract_64oz: false
+  exercise: MyString
+  accomplishment: MyText
+  model_day: false
+  energy: false
+  notes: MyText
+
+two:
+  date: 2014-05-17 17:52:08
+  weight: 1
+  focus: MyText
+  breakfast: MyString
+  brk_cals: 1
+  lunch: MyString
+  lunch_cals: 1
+  dinner: MyString
+  dinner_cals: 1
+  snacks: MyString
+  snacks: 1
+  water_extract_64oz: false
+  exercise: MyString
+  accomplishment: MyText
+  model_day: false
+  energy: false
+  notes: MyText

@@ -1,0 +1,42 @@
+<h1>Listing studies</h1>
+<%= stylesheet_link_tag "studies" %>
+<%= link_to 'Back', tasks_path, {:style=>'color:white;', :class => "btn btn-dirt"} %>
+<table class="table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Next up</th>
+      <th>Deadline</th>
+      <th>Priority</th>
+      <th>Category</th>
+      <th>Links</th>
+      <th>Material</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @studies.each do |study| %>
+      <tr>
+        <td><%= study.name %></td>
+        <td><%= study.next_up.chars[0..20].join %></td>
+        <td><center><%= study.deadline.strftime("%d") %></center></td>
+        <td><center><%= study.priority %></center></td>
+        <td><%= study.category %></td>
+        <td><%= study.links.chars[0..10].join %></td>
+        <td><%= study.material %></td>
+        <td><%= study.notes.chars[0..15].join %></td>
+        <td><%= link_to 'Show', study, {:style=>'color:white;', :class => 'btn btn-success'} %></td>
+        <td><%= link_to 'Edit', edit_study_path(study), {:style=>'color:white;', :class => 'btn btn-info'} %></td>
+        <td><%= link_to 'Destroy', study, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary', :style => 'color: white;' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Study', new_study_path %>

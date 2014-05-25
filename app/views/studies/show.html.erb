@@ -1,0 +1,56 @@
+<%= stylesheet_link_tag "studies" %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @study.name %>
+</p>
+
+<p>
+  <strong>Next up:</strong>
+  <%= @study.next_up %>
+</p>
+
+<p>
+  <strong>Done for today:</strong>
+  <%= @study.done_for_today %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @study.deadline %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @study.priority %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @study.category %>
+</p>
+
+<p>
+  <strong>Links:</strong>
+  <%= @study.links %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @study.material %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @study.completed %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @study.notes %>
+</p>
+
+<%= link_to 'Edit', edit_study_path(@study) %> |
+<%= link_to 'Back', studies_path %>

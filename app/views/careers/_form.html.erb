@@ -1,0 +1,45 @@
+<%= form_for(@career) do |f| %>
+  <% if @career.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@career.errors.count, "error") %> prohibited this career from being saved:</h2>
+
+      <ul>
+      <% @career.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :area %><br>
+    <%= f.text_field :area %>
+  </div>
+  <div class="field">
+    <%= f.label :next_up %><br>
+    <%= f.text_field :next_up %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :links %><br>
+    <%= f.text_field :links %>
+  </div>
+  <div class="field">
+    <%= f.label :materials %><br>
+    <%= f.text_field :materials %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br>
+    <%= f.number_field :priority %>
+  </div>
+  <div class="field">
+    <%= f.label :last_worked_on %><br>
+    <%= f.datetime_select :last_worked_on %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

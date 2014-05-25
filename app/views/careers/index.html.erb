@@ -1,0 +1,39 @@
+<h1>Listing careers</h1>
+<%= link_to 'Home', tasks_path, {:style=>'color:white;', :class => "btn btn-dirt"} %>
+<table class="table-striped">
+  <thead>
+    <tr>
+      <th>Area</th>
+      <th>Next up</th>
+      <th>Notes</th>
+      <th>Links</th>
+      <th>Materials</th>
+      <th>Priority</th>
+      <th>Last worked on</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @careers.each do |career| %>
+      <tr>
+        <td><%= career.area %></td>
+        <td><%= career.next_up %></td>
+        <td><%= career.notes.chars[0..20].join %></td>
+        <td><%= career.links %></td>
+        <td><%= career.materials %></td>
+        <td><center><%= career.priority %></center></td>
+        <td><center><%= career.last_worked_on.strftime("%d") %></center></td>
+        <td><%= link_to 'Show', career, {:style=>'color:white;', :class => 'btn btn-success'}  %></td>
+        <td><%= link_to 'Edit', edit_career_path(career), {:style=>'color:white;', :class => 'btn btn-info'}  %></td>
+        <td><%= link_to 'Destroy', career, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary', :style => 'color: white;' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Career', new_career_path %>

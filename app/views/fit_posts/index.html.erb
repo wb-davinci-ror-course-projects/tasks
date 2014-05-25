@@ -1,0 +1,63 @@
+<h1>Listing fit_posts</h1>
+<%= stylesheet_link_tag "fit_posts" %>
+<%= link_to 'Home', tasks_path, {:style=>'color:white;', :class => "btn btn-dirt"} %>
+<%= link_to 'New Fit post', new_fit_post_path, {:style=>'color:brown;', :class => "btn btn-default"} %>
+<table class="table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Total Calories</th>
+      <th>Weight</th>
+      <th>Focus</th>
+      <th>Breakfast</th>
+      <th>Lunch</th>
+      <th>Dinner</th>
+      <th>Snacks</th>
+      <th>Calorie tracking complete</th>
+      <th>Exercise</th>
+      <th>Model day</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fit_posts.each do |fit_post| %>
+      <tr>
+        <td><%= fit_post.date.strftime("%d") %></td>
+        <% if fit_post.brk_cals != nil && fit_post.lunch_cals != nil && fit_post.dinner_cals != nil && fit_post.snack_cals != nil%>
+          <td><%= fit_post.brk_cals + fit_post.lunch_cals + fit_post.dinner_cals + fit_post.snack_cals%></td>
+        <% else %>
+          <td>not entered</td>
+        <% end %>
+        <td><%= fit_post.weight %></td>
+        <td><%= fit_post.focus %></td>
+        <td><%= fit_post.breakfast %></td>
+        <td><%= fit_post.lunch %></td>
+        <td><%= fit_post.dinner %></td>
+        <td><%= fit_post.snacks %></td>
+        <% if fit_post.cal_track_complete == true %>
+          <td>Yes</td>
+        <% else %>
+          <td></td>
+        <% end %>
+        <td><%= fit_post.exercise %></td>
+        <% if fit_post.model_day == true %>
+          <td>Yes</td>
+        <% else %>
+          <td></td>
+        <% end %>
+        <td><%= fit_post.notes %></td>
+        <td><%= link_to 'Show', fit_post, {:style=>'color:white;', :class => 'btn btn-success'} %></td>
+        <td><%= link_to 'Edit', edit_fit_post_path(fit_post), {:style=>'color:white;', :class => 'btn btn-info'} %></td>
+        <td><%= link_to 'Destroy', fit_post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary', :style => 'color: white;' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
