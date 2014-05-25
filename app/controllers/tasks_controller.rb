@@ -45,6 +45,13 @@ class TasksController < ApplicationController
   end
   
   def practice2
+#     require 'open-uri'
+#     require 'json'
+#       url = JSON.parse("http://ats-rails-project.herokuapp.com.json").to_s
+#       open(url) do |http|
+#       @response = http.read
+#       @response = @response[0]
+#       end
     render :practice2, layout: false and return
   end
   

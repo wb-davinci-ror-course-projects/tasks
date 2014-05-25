@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140524233148) do
+ActiveRecord::Schema.define(version: 20140525161810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140524233148) do
     t.boolean  "cal_track_complete"
     t.integer  "snack_cals"
     t.string   "snacks"
+    t.integer  "user_id"
   end
 
   create_table "locations", force: true do |t|
