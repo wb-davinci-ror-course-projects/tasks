@@ -18,9 +18,9 @@ class TasksController < ApplicationController
 #       @locations = Location.order(updated_at: :desc).paginate(:page => params[:page])
 #     end
     if params[:format] == "priority"
-      @tasks = Task.order(:priority).page(params[:page]).per_page(6)
+      @tasks = Task.order(:priority).page(params[:page]).per_page(7)
     else
-      @tasks = Task.order(:deadline).page(params[:page]).per_page(6)
+      @tasks = Task.order(:deadline).page(params[:page]).per_page(9)
     end
   end
   
@@ -38,6 +38,10 @@ class TasksController < ApplicationController
   
   def archive
     @tasks = Task.all.page(params[:page]).per_page(10)
+  end
+ 
+  def trails
+    render :trails, layout: false and return
   end
  
   def practice1

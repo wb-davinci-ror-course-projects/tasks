@@ -11,7 +11,7 @@
       <%= link_to 'Fit Post', fit_posts_path, {:style=>'color:white;', :class => 'btn btn-dirt'} %>
       <%= link_to "Priority", tasks_path(:priority), {:style=>'color:white;', :class => 'btn btn-success'} %>
       <%= link_to 'Archive', archive_path, {:style=>'color:white;', :class => 'btn btn-success'} %>
-      <a class="btn btn-success" style="color: white;" href="/tasks/calendar">Calendar</a>
+      <a class="btn btn-success" style="color: white;" href="/tasks/calendar">Calendar</a><br>
       <a class="btn btn-gray" style="color: white;" href="http://www.weather.com/weather/hourbyhour/graph/80227">Weather</a>
       <a class="btn btn-gray" style="color: white;" href="http://finance.yahoo.com/q;_ylt=AsCON6EETHyuQCXV57HQ93Inv7gF?uhb=uh3_finance_vert_gs_ctrl2&fr=uh3_finance_vert_gs_ctrl2_e&type=2button&s=c">Quote</a>
       <% x = 1 %>
@@ -19,9 +19,11 @@
         <a class="btn btn-gray" style="color: white;" href="/practice<%= x %>">Practice<%= x %></a>
         <% x += 1 %>
       <% end %>
+      <a class="btn btn-gray" style="color: white;" href="/trails">Trails</a>
   </div>
 </div>
-<div class="container row">
+</div>
+<div style = "height: 350px;">
 <table class="table-striped">
   <thead>
     <tr>
@@ -41,7 +43,7 @@
   </thead>
 
   <tbody>
-    <% @tasks.order(:deadline).each do |task| %>
+    <% @tasks.each do |task| %>
       <tr>
       <% if task.completed == false %>
         <td><div class="field">
@@ -86,6 +88,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <% Study.all.each do |s| %>
   <% if s.priority == 1 && DateTime.now.day == s.deadline.day %>

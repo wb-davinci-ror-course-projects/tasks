@@ -5,7 +5,7 @@ Mine::Application.routes.draw do
   resources :studies
 
   resources :fit_posts
-  
+get "/trails" =>  "tasks#trails", as: "trails"  
 get "/practice1" =>  "tasks#practice1", as: "practice1"
 get "/practice2" =>  "tasks#practice2", as: "practice2"
 get "/practice3" =>  "tasks#practice3", as: "practice3"

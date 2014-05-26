@@ -10,9 +10,21 @@ body {
   line-height: 18px;
   padding: 10px;
   border: 20px solid #1E5A53;
-  height: 600px;
+}
+.fig {
+  text-transform: uppercase;
+  color: #4d4d4d;
+  font-size: 1.2em;
 }
 
+/* 
+#this will style all figcaptions in app this way
+section#trailReviews figcaption {
+  text-transform: uppercase;
+  color: #4d4d4d;
+  font-size: 1.2em;
+}
+ */
 .digg_pagination {
   background: white;
   cursor: default;
