@@ -1,7 +1,13 @@
-<h1>Listing fit_posts</h1>
 <%= stylesheet_link_tag "fit_posts" %>
+<header class="header">
+<h1><center>Daily Health Journal</center></h1>
+<nav>
 <%= link_to 'Home', tasks_path, {:style=>'color:white;', :class => "btn btn-dirt"} %>
 <%= link_to 'New Fit post', new_fit_post_path, {:style=>'color:brown;', :class => "btn btn-default"} %>
+</nav>
+<hr>
+</header>
+
 <table class="table-striped">
   <thead>
     <tr>
