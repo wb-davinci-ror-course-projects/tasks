@@ -18,7 +18,7 @@ class TasksController < ApplicationController
 #       @locations = Location.order(updated_at: :desc).paginate(:page => params[:page])
 #     end
     if params[:format] == "priority"
-      @tasks = Task.order(:priority).page(params[:page]).per_page(7)
+      @tasks = Task.order(:priority).page(params[:page]).per_page(4)
     else
       @tasks = Task.order(:deadline).page(params[:page]).per_page(9)
     end

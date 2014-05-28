@@ -9,13 +9,18 @@ body {
   font-size: 13px;
   line-height: 18px;
   padding: 10px;
-  border: 20px solid gray;
+  border: 5px solid gray;
+  box-shadow: 2px 5px 2px gray;
 }
 
 .header {
   height: 100px;
+  font-family: moonspace;
+  padding: 10px;
 }
 
-nav ul, ul.menu {
+/* 
+nav ul, ul.menu {s
   list-style: none;
 }
+ */

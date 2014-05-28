@@ -84,7 +84,7 @@ GEM
       activesupport (= 4.0.4)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.3.1)
+    rake (10.3.2)
     rake_db_dump (0.0.2)
     rdoc (4.1.1)
       json (~> 1.4)
@@ -134,6 +134,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.0.4)
   rails_12factor
+  rake (= 10.3.2)
   rake_db_dump
   sass-rails (~> 4.0.2)
   sdoc

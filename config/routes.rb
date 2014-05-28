@@ -1,5 +1,7 @@
 Mine::Application.routes.draw do
 
+  resources :links
+
   resources :careers
 
   resources :studies

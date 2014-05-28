@@ -1,16 +1,14 @@
-<%= stylesheet_link_tag "studies" %>
-
 <p id="notice"><%= notice %></p>
-
-<p>
+<%= stylesheet_link_tag "studies" %>
+<p style="font-size: 13pt;">
   <strong>Name:</strong>
   <%= @study.name %>
-</p>
+</p><br>
 
-<p>
+<p style="font-size: 11pt;">
   <strong>Next up:</strong>
   <%= @study.next_up %>
-</p>
+</p><br>
 
 <p>
   <strong>Done for today:</strong>
@@ -50,7 +48,7 @@
 <p>
   <strong>Notes:</strong>
   <%= @study.notes %>
-</p>
+</p><br>
 
 <%= link_to 'Edit', edit_study_path(@study) %> |
 <%= link_to 'Back', studies_path %>

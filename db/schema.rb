@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140525161810) do
+ActiveRecord::Schema.define(version: 20140528044029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,18 @@ ActiveRecord::Schema.define(version: 20140525161810) do
     t.integer  "snack_cals"
     t.string   "snacks"
     t.integer  "user_id"
+  end
+
+  create_table "links", force: true do |t|
+    t.string   "description"
+    t.string   "address"
+    t.text     "notes"
+    t.integer  "rank"
+    t.string   "language"
+    t.string   "category"
+    t.boolean  "visited"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "locations", force: true do |t|
