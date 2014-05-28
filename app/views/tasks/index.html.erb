@@ -9,13 +9,7 @@
       <li><%= link_to 'Fit Post', fit_posts_path, {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
       <li><%= link_to "Priority", tasks_path(:priority), {:style=>'color:brown;', :class => 'btn btn-success'} %></li>
       <li><%= link_to 'Archive', archive_path, {:style=>'color:brown;', :class => 'btn btn-success'} %></li>
-      <li><%= link_to 'Links', links_path, {:style=>'color:brown;', :class => 'btn btn-success'} %></li>
       <li><a class="btn btn-success" style="color: brown;" href="/tasks/calendar">Calendar</a></li>
-      <% x = 1 %>
-      <% while x > 0 && x < 3 %>
-        <li><a class="btn btn-gray" style="color: green;;" href="/practice<%= x %>">Practice<%= x %></a></li>
-        <% x += 1 %>
-      <% end %>
       <li><a class="btn btn-default" style="color: #5BDCEB;" href="http://www.weather.com/weather/hourbyhour/graph/80227">Weather</a></li>
       <li><a class="btn btn-default" style="color: #5BDCEB;" href="http://finance.yahoo.com/q;_ylt=AsCON6EETHyuQCXV57HQ93Inv7gF?uhb=uh3_finance_vert_gs_ctrl2&fr=uh3_finance_vert_gs_ctrl2_e&type=2button&s=c">Quote</a></li>
 </ul>

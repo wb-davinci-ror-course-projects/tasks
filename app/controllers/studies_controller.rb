@@ -11,7 +11,27 @@ class StudiesController < ApplicationController
   # GET /studies/1.json
   def show
   end
-
+  
+  def practice1
+    render :practice1, layout: false and return
+  end
+  
+  def practice2
+#     require 'open-uri'
+#     require 'json'
+#       url = JSON.parse("http://ats-rails-project.herokuapp.com.json").to_s
+#       open(url) do |http|
+#       @response = http.read
+#       @response = @response[0]
+#       end
+    render :practice2, layout: false and return
+  end
+  
+   def practice3
+    render :practice3, layout: false and return
+  end
+  
+  
   # GET /studies/new
   def new
     @study = Study.new
