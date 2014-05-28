@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  address: MyString
+  notes: MyText
+  rank: 1
+  language: MyString
+  category: MyString
+  visited: false
+
+two:
+  description: MyString
+  address: MyString
+  notes: MyText
+  rank: 1
+  language: MyString
+  category: MyString
+  visited: false

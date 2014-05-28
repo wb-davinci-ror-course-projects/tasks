@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @link.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @link.address %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @link.notes %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @link.rank %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @link.language %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @link.category %>
+</p>
+
+<p>
+  <strong>Visited:</strong>
+  <%= @link.visited %>
+</p>
+
+<%= link_to 'Edit', edit_link_path(@link) %> |
+<%= link_to 'Back', links_path %>
