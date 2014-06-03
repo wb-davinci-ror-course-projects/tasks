@@ -45,8 +45,8 @@ class StudiesController < ApplicationController
   # POST /studies.json
   def create
     @study = Study.new(study_params)
-
     respond_to do |format|
+#         @study.material = {:name => @study.name, :links => @study.links, :not_a_column => params[:test]}
       if @study.save
         format.html { redirect_to @study, notice: 'Study was successfully created.' }
         format.json { render action: 'show', status: :created, location: @study }

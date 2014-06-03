@@ -3,13 +3,13 @@
     <h1 style="color: #1E5A53; text-shadow: 1px 4px 1px white;"><%= Date.today.strftime( "%A" ) %><i>tasks</i></h1>
   </div>
   <ul class="nav nav-pills pull-right task_nav"> 
-      <li><%= link_to 'New Task', new_task_path, {:style=>'color:#927017;', :class => 'btn btn-default'} %></li>
+      <li><%= link_to 'New Task', new_task_path, {:style=>'color:#1E5A53;', :class => 'btn btn-default'} %></li>
       <li><%= link_to "Career", careers_path(:priority), {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
       <li><%= link_to 'Study', studies_path, {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
       <li><%= link_to 'Fit Post', fit_posts_path, {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
-      <li><%= link_to "Priority", tasks_path(:priority), {:style=>'color:brown;', :class => 'btn btn-success'} %></li>
-      <li><%= link_to 'Archive', archive_path, {:style=>'color:brown;', :class => 'btn btn-success'} %></li>
-      <li><a class="btn btn-success" style="color: brown;" href="/tasks/calendar">Calendar</a></li>
+      <li><%= link_to "Priority", tasks_path(:priority), {:style=>'color:#927017;', :class => 'btn btn-info'} %></li>
+      <li><%= link_to 'Archive', archive_path, {:style=>'color:#927017;', :class => 'btn btn-info'} %></li>
+      <li><a class="btn btn-info" style="color: #927017;" href="/tasks/calendar">Calendar</a></li>
       <li><a class="btn btn-default" style="color: #5BDCEB;" href="http://www.weather.com/weather/hourbyhour/graph/80227">Weather</a></li>
       <li><a class="btn btn-default" style="color: #5BDCEB;" href="http://finance.yahoo.com/q;_ylt=AsCON6EETHyuQCXV57HQ93Inv7gF?uhb=uh3_finance_vert_gs_ctrl2&fr=uh3_finance_vert_gs_ctrl2_e&type=2button&s=c">Quote</a></li>
 </ul>
@@ -18,16 +18,15 @@
   <thead>
     <tr>
       <th></th>
-      <th><center>Name</center></th>
+      <th class="pad"><center>Name</center></th>
       <th><center>Deadline</center></th>
       <th><center>Priority</center></th>
       <th><center>Notes</center></th>
-      <th><center>Links</center></th>
+      <th><center>Link</center></th>
       <th><center>Category</center></th>
       <th><center>Contact</center></th>
     </tr>
   </thead>
-  
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
@@ -55,16 +54,16 @@
         <% else %>
           <td width="50"><center><%= task.priority %></center></td>
         <% end %>
-        <td width="150"><p style="color: rgba(6, 72, 133, 0.85)"><%= task.notes.chars[0..20].join %></p>
+        <td width="170"><p><%= task.notes.chars[0..20].join %></p>
         <% if task.notes.length > 20 %>
-          <u><a href="/tasks/notes/<%= task.id %>" style="color: rgba(6, 72, 133, 0.85)">more...</a></u></td>
+          <u><a href="/tasks/notes/<%= task.id %>" style="color: #927017">more...</a></u></td>
         <% end %>
-        <td width="110"><%= task.links.chars[0..12].join %></td>
-        <td width="110"><p style="color: gray"><%= task.category.chars[0..12].join %></p></td>
+       <td width="110"> <a style="color: #927017;" href="http://<%= task.links %>"><%= task.links.chars[0..12].join %><a></td>
+        <td width="110"><p><%= task.category.chars[0..12].join %></p></td>
         <td width="110"><%= task.contact %></td>
-        <td><%= link_to 'Show', task, {:style=>'color:white;', :class => 'btn btn-success'} %></td>
-        <td><%= link_to 'Edit', edit_task_path(task), {:style=>'color:white;', :class => 'btn btn-info'} %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary', :style => 'color: white;'%></td>
+        <td><%= link_to 'Show', task, {:style=>'color:white;', :class => 'btn btn-forest'} %></td>
+        <td><%= link_to 'Edit', edit_task_path(task), {:style=>'color:white;', :class => 'btn btn-dirt'} %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-info', :style => 'color: white;'%></td>
       </tr>
       <% end %>
     <% end %>
@@ -73,7 +72,7 @@
 </div>
 <div>
 <% Study.all.each do |s| %>
-  <% if s.priority == 1 && DateTime.now.day == s.deadline.day %>
+  <% if s.priority == 1 && DateTime.now >= s.deadline %>
     <b style="color: #927017"><%= "FYI - Study Task '#{s.name}' is due today" %></b>
   <% end %>
 <% end %>

@@ -4,7 +4,7 @@
 
 body {
   background-color: rgba(192, 192, 192, 0.48);
-  color: rgba(6, 72, 133, 0.85);
+  color: black;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -24,3 +24,24 @@ nav ul, ul.menu {s
   list-style: none;
 }
  */
+ .btn-black {
+  color: white;
+  background-color: black;
+  border-color: white;
+}
+
+.btn-silver {
+  color: white;
+  background-color: silver;
+  border-color: black;
+}
+.btn-gray {
+  color: white;
+  background-color: gray;
+  border-color: black;
+}
+.btn-white {
+  color: black;
+  background-color: white;
+  border-color: black;
+}

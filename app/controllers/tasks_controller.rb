@@ -17,10 +17,11 @@ class TasksController < ApplicationController
 #     else
 #       @locations = Location.order(updated_at: :desc).paginate(:page => params[:page])
 #     end
+    tasks = Task.where(completed: false)
     if params[:format] == "priority"
-      @tasks = Task.order(:priority).page(params[:page]).per_page(4)
+      @tasks = tasks.order(:priority).page(params[:page]).per_page(5)
     else
-      @tasks = Task.order(:deadline).page(params[:page]).per_page(9)
+      @tasks = tasks.order(:deadline).page(params[:page]).per_page(5)
     end
   end
   
@@ -44,26 +45,6 @@ class TasksController < ApplicationController
     render :trails, layout: false and return
   end
  
-  def practice1
-    render :practice1, layout: false and return
-  end
-  
-  def practice2
-#     require 'open-uri'
-#     require 'json'
-#       url = JSON.parse("http://ats-rails-project.herokuapp.com.json").to_s
-#       open(url) do |http|
-#       @response = http.read
-#       @response = @response[0]
-#       end
-    render :practice2, layout: false and return
-  end
-  
-   def practice3
-    render :practice3, layout: false and return
-  end
-  
-  
 
   # GET /tasks/new
   def new

@@ -3,12 +3,12 @@
 <table>
   <thead>
     <tr>
-      <th>Description</th>
       <th>Address</th>
+      <th>Category</th>
+      <th>Description</th>
       <th>Notes</th>
       <th>Rank</th>
       <th>Language</th>
-      <th>Category</th>
       <th>Visited</th>
       <th></th>
       <th></th>
@@ -19,12 +19,12 @@
   <tbody>
     <% @links.each do |link| %>
       <tr>
+        <td><a href="http://<%= link.address %>"><%= link.address %></a></td>
+        <td><%= link.category %></td>
         <td><%= link.description %></td>
-        <td><%= link.address %></td>
         <td><%= link.notes %></td>
         <td><%= link.rank %></td>
         <td><%= link.language %></td>
-        <td><%= link.category %></td>
         <td><%= link.visited %></td>
         <td><%= link_to 'Show', link %></td>
         <td><%= link_to 'Edit', edit_link_path(link) %></td>

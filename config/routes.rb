@@ -1,5 +1,9 @@
 Mine::Application.routes.draw do
 
+  resources :timelines
+
+  resources :users
+
   resources :links
 
   resources :careers

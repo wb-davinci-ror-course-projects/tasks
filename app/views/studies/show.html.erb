@@ -34,11 +34,14 @@
   <strong>Links:</strong>
   <%= @study.links %>
 </p>
-
+<!--
 <p>
-  <strong>Material:</strong>
-  <%= @study.material %>
+  <strong>Material:</strong><br>
+  % @study.material.each do |key, value| %>
+  %= "#{key}: #{value}" %><br>
+  % end %>
 </p>
+--!>
 
 <p>
   <strong>Completed:</strong>

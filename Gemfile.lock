@@ -130,7 +130,7 @@ DEPENDENCIES
   dynamic_form
   jbuilder (~> 1.2)
   jquery-rails
-  pg
+  pg (~> 0.17.0)
   pry-rails
   rails (= 4.0.4)
   rails_12factor

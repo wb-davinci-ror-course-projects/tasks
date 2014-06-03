@@ -1,4 +1,4 @@
-<h1>Listing careers</h1>
+<h1>Career Reference</h1>
 <%= link_to 'Home', tasks_path, {:style=>'color:white;', :class => "btn btn-dirt"} %>
 <table class="table-striped">
   <thead>
@@ -22,7 +22,7 @@
         <td><%= career.area %></td>
         <td><%= career.next_up %></td>
         <td><%= career.notes.chars[0..20].join %></td>
-        <td><%= career.links %></td>
+        <td><a href="http://<%= career.links %>"><%= career.links %></a></td>
         <td><%= career.materials %></td>
         <td><center><%= career.priority %></center></td>
         <td><center><%= career.last_worked_on.strftime("%d") %></center></td>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Career', new_career_path %>
+<%= link_to 'New Career Item', new_career_path %>

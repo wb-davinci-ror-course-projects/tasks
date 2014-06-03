@@ -1,12 +1,16 @@
-<h1>Listing studies</h1>
 <%= stylesheet_link_tag "studies" %>
-<%= link_to 'Back', tasks_path, {:style=>'color:white;', :class => "btn btn-dirt"} %>
-      <% x = 1 %>
-      <% while x > 0 && x < 4 %>
-        <li><a class="btn btn-gray" style="color: green;;" href="/practice<%= x %>">Practice<%= x %></a></li>
-        <% x += 1 %>
-      <% end %>
-      <li><%= link_to 'Links', links_path, {:style=>'color:brown;', :class => 'btn btn-success'} %></li>
+<ul class="nav nav-pills pull-center studies_nav">
+  <li><%= link_to 'New Study Task', new_study_path, {:class => "btn btn-default"} %></li>
+  <li><%= link_to 'Back', tasks_path, {:style=>'color:white;', :class => "btn btn-dirt"} %></li>
+  <% x = 1 %>
+  <% while x > 0 && x < 4 %>
+    <li><a class="btn btn-gray" style="color: green;;" href="/practice<%= x %>">Practice<%= x %></a></li>
+    <% x += 1 %>
+  <% end %>
+  <li><%= link_to 'Links', links_path, {:style=>'color:white;', :class => 'btn btn-success'} %></li>
+  <li><%= link_to 'Timeline', timelines_path, {:style=>'color:white;', :class => 'btn btn-success'} %></li>
+</ul>
+<h1>To Study</h1><br>
 <table class="table-striped">
   <thead>
     <tr>
@@ -16,26 +20,29 @@
       <th>Priority</th>
       <th>Category</th>
       <th>Links</th>
-      <th>Material</th>
       <th>Notes</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @studies.each do |study| %>
       <tr>
-        <td><%= study.name %></td>
+      
+        <td width="150">
+          <% if Time.now >= study.deadline - (60*60*24)%>
+            <p style="color: #927017"><b><%= study.name %></b></p>
+          <% elsif Time.now <= study.deadline - (60*60*24*15)%>
+            <p style="color: silver"><%= study.name %></p>
+          <% else %>
+            <%= study.name %>
+          <% end %>
+        </td>
         <td><%= study.next_up.chars[0..20].join %></td>
         <td><center><%= study.deadline.strftime("%d") %></center></td>
         <td><center><%= study.priority %></center></td>
         <td><%= study.category %></td>
-        <td><%= study.links.chars[0..10].join %></td>
-        <td><%= study.material %></td>
-        <td><%= study.notes.chars[0..15].join %></td>
-        <td><%= link_to 'Show', study, {:style=>'color:white;', :class => 'btn btn-success'} %></td>
+        <td><a href="http://<%= study.links %>"><%= study.links.chars[0..10].join %></a></td>
+        <td><%= study.notes.chars[0..10].join %></td>
+        <td class="pad"><%= link_to 'Show', study, {:style=>'color:white;', :class => 'btn btn-success'} %></td>
         <td><%= link_to 'Edit', edit_study_path(study), {:style=>'color:white;', :class => 'btn btn-info'} %></td>
         <td><%= link_to 'Destroy', study, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary', :style => 'color: white;' %></td>
       </tr>
@@ -45,4 +52,3 @@
 
 <br>
 
-<%= link_to 'New Study', new_study_path %>

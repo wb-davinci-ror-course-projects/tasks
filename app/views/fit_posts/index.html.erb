@@ -1,31 +1,27 @@
 <%= stylesheet_link_tag "fit_posts" %>
 <header class="header" >
-<center><p style="font-family: moonspace; font-size: 40px; color: gray;">Daily Health Journal</p></center>
+<center><p class="pad" style="font-family: moonspace; font-size: 40px; color: black;">Daily Health Journal</p></center>
 <nav>
-<%= link_to 'Home', tasks_path, {:style=>'color:white;', :class => "btn btn-dirt"} %>
-<%= link_to 'New Fit post', new_fit_post_path, {:style=>'color:brown;', :class => "btn btn-default"} %>
+<%= link_to 'Home', tasks_path, {:style=>'color:white;', :class => "btn btn-black"} %>
+<%= link_to 'New Fit post', new_fit_post_path, {:style=>'color:black;', :class => "btn btn-white"} %>
 </nav>
 <hr style="background-color:gray;height:3px;border:none;" />
 </header>
 
 <table class="table-striped">
-  <thead>
+  <thead class>
     <tr>
-      <th>Date</th>
-      <th>Total Calories</th>
-      <th>Weight</th>
-      <th>Focus</th>
-      <th>Breakfast</th>
-      <th>Lunch</th>
-      <th>Dinner</th>
-      <th>Snacks</th>
-      <th>Calorie tracking complete</th>
-      <th>Exercise</th>
-      <th>Model day</th>
-      <th>Notes</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th class="pad"><center>Date</center></th>
+      <th class="pad"><center>Total Calories</center></th>
+      <th class="pad"><center>Weight</center></th>
+      <th class="pad"><center>Focus</center></th>
+      <th class="pad"><center>Breakfast</center></th>
+      <th class="pad"><center>Lunch</center></th>
+      <th class="pad"><center>Dinner</center></th>
+      <th class="pad"><center>Snacks</center></th>
+      <th class="pad"><center>Calorie tracking complete</center></th>
+      <th class="pad"><center>Exercise</center></th>
+      <th class="pad"><center>Model day</center></th>
     </tr>
   </thead>
 
@@ -55,10 +51,9 @@
         <% else %>
           <td></td>
         <% end %>
-        <td><%= fit_post.notes %></td>
-        <td><%= link_to 'Show', fit_post, {:style=>'color:white;', :class => 'btn btn-success'} %></td>
-        <td><%= link_to 'Edit', edit_fit_post_path(fit_post), {:style=>'color:white;', :class => 'btn btn-info'} %></td>
-        <td><%= link_to 'Destroy', fit_post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary', :style => 'color: white;' %></td>
+        <td><%= link_to 'Show', fit_post, {:style=>'color:white;', :class => 'btn btn-silver'} %></td>
+        <td><%= link_to 'Edit', edit_fit_post_path(fit_post), {:style=>'color:white;', :class => 'btn btn-gray'} %></td>
+        <td><%= link_to 'Destroy', fit_post, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-black', :style => 'color: white;' %></td>
       </tr>
     <% end %>
   </tbody>
