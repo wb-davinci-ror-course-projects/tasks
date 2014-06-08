@@ -71,6 +71,7 @@
 </table>
 </div>
 <div>
+<br />
 <% Study.all.each do |s| %>
   <% if s.priority == 1 && DateTime.now >= s.deadline %>
     <b style="color: #927017"><%= "FYI - Study Task '#{s.name}' is due today" %></b>
