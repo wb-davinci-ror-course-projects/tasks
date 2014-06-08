@@ -3,13 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background-color: rgba(192, 192, 192, 0.48);
-  color: black;
+  background-color: #06346B;
+  color: #ff6600;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
   padding: 10px;
-  border: 5px solid gray;
+  border: 20px solid #ff6600;
   box-shadow: 2px 5px 2px gray;
 }
 
@@ -41,7 +41,19 @@ nav ul, ul.menu {s
   border-color: black;
 }
 .btn-white {
-  color: black;
+  color: #ff6600;
   background-color: white;
-  border-color: black;
+  border-color: #ff6600;
+}
+
+.btn-orange {
+  color: white;
+  background-color: #ff6600;
+  border-color: white;
+}
+
+.btn-blue {
+  color: white;
+  background-color: #06346B;
+  border-color: white;
 }
