@@ -1,5 +1,7 @@
 Mine::Application.routes.draw do
 
+  resources :blog_links
+
   resources :timelines
 
   resources :users
@@ -18,6 +20,7 @@ get "/tasks/notes/:id" =>  "tasks#notes", as: "notes"
 get "/practice1" =>  "studies#practice1", as: "practice1"
 get "/practice2" =>  "studies#practice2", as: "practice2"
 get "/practice3" =>  "studies#practice3", as: "practice3"
+get "/dv_class_blogs" => "blog_links#dv_blogs", as: "dv_blogs"
 
 resources :tasks
 

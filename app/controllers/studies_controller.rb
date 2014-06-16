@@ -11,7 +11,7 @@ class StudiesController < ApplicationController
   # GET /studies/1.json
   def show
   end
-  
+    
   def practice1
     render :practice1, layout: false and return
   end

@@ -19,7 +19,11 @@
   <tbody>
     <% @links.each do |link| %>
       <tr>
+      <% if link.address.chars[0..6].join == "http://" || link.address.chars[0..7].join == "https://" %>
+        <td><a href="<%= link.address %>"><%= link.address %></a></td>
+      <% else %>
         <td><a href="http://<%= link.address %>"><%= link.address %></a></td>
+      <% end %>
         <td><%= link.category %></td>
         <td><%= link.description %></td>
         <td><%= link.notes %></td>

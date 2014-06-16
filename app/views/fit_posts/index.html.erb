@@ -28,26 +28,26 @@
   <tbody>
     <% @fit_posts.each do |fit_post| %>
       <tr>
-        <td><%= fit_post.date.strftime("%d") %></td>
+        <td><center><%= fit_post.date.strftime("%d") %></center></td>
         <% if fit_post.brk_cals != nil && fit_post.lunch_cals != nil && fit_post.dinner_cals != nil && fit_post.snack_cals != nil%>
-          <td><%= fit_post.brk_cals + fit_post.lunch_cals + fit_post.dinner_cals + fit_post.snack_cals%></td>
+          <td><center><%= fit_post.brk_cals + fit_post.lunch_cals + fit_post.dinner_cals + fit_post.snack_cals%><center></td>
         <% else %>
-          <td>not entered</td>
+          <td><center>not entered</center></td>
         <% end %>
-        <td><%= fit_post.weight %></td>
-        <td><%= fit_post.focus %></td>
-        <td><%= fit_post.breakfast %></td>
-        <td><%= fit_post.lunch %></td>
-        <td><%= fit_post.dinner %></td>
-        <td><%= fit_post.snacks %></td>
+        <td><center><%= fit_post.weight %></center></td>
+        <td><center><%= fit_post.focus %></center></td>
+        <td><center><%= fit_post.breakfast %></center></td>
+        <td><center><%= fit_post.lunch %></center></td>
+        <td><center><%= fit_post.dinner %></center></td>
+        <td><center><%= fit_post.snacks %></center></td>
         <% if fit_post.cal_track_complete == true %>
-          <td>Yes</td>
+          <td><center>Yes</center></td>
         <% else %>
           <td></td>
         <% end %>
-        <td><%= fit_post.exercise %></td>
+        <td><center><%= fit_post.exercise %></center></td>
         <% if fit_post.model_day == true %>
-          <td>Yes</td>
+          <td><center>Yes</center></td>
         <% else %>
           <td></td>
         <% end %>
