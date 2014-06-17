@@ -1,0 +1,31 @@
+<h1>Listing blog_links</h1> <%= link_to "DV class", dv_blogs_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Link</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blog_links.each do |blog_link| %>
+      <tr>
+        <td class="pad"><a href="<%= blog_link.link %>"><%= blog_link.link %></a></td>
+        <td class="pad"><%= blog_link.description %></td>
+        <td class="pad"><%= blog_link.category %></td>
+        <td class="pad"><%= link_to 'Show', blog_link %></td>
+        <td class="pad"><%= link_to 'Edit', edit_blog_link_path(blog_link) %></td>
+        <td class="pad"><%= link_to 'Destroy', blog_link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blog link', new_blog_link_path %>

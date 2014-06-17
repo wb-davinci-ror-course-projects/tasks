@@ -2,21 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
-  background-color: #06346B;
-  color: #ff6600;
+  /*background-color: #06346B;*/
+  background-color: #4D6F78;
+  color: #CDB47E;
+  text_shadow: 2px 2px 2px black;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 18px;
   padding: 10px;
-  border: 20px solid #ff6600;
+  border: 10px solid #4A4654;
   box-shadow: 2px 5px 2px gray;
 }
 
 .header {
+  background: url("water_crop.jpg");
   height: 100px;
   font-family: moonspace;
-  padding: 10px;
+  padding: 25px;
 }
 
 /* 
@@ -41,20 +52,20 @@ nav ul, ul.menu {s
   border-color: black;
 }
 .btn-white {
-  color: #ff6600;
+  color: #002041;
   background-color: white;
-  border-color: #ff6600;
+  border-color: #002041;
 }
 
 .btn-orange {
   color: white;
-  background-color: #ff6600;
+  background-color: #CDB47E;
   border-color: white;
 }
 
 .btn-blue {
   color: white;
-  background-color: #06346B;
+  background-color: #002041;
   border-color: white;
 }
 

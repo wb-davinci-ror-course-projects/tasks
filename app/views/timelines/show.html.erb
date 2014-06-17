@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @timeline.event_year %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @timeline.event %>
+</p>
+
+<p>
+  <strong>Who:</strong>
+  <%= @timeline.who %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @timeline.notes %>
+</p>
+
+<%= link_to 'Edit', edit_timeline_path(@timeline) %> |
+<%= link_to 'Back', timelines_path %>

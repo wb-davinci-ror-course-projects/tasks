@@ -11,6 +11,7 @@
       </ul>
     </div>
   <% end %>
+  <div class="pull-left">
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -19,6 +20,8 @@
     <%= f.label :next_up %><br>
     <%= f.text_area :next_up, :rows => 20, :cols => 70 %>
   </div>
+  </div>
+  <div class = "pull-right">
   <div class="field">
     <%= f.label :done_for_today %><br>
     <%= f.check_box :done_for_today %>
@@ -47,7 +50,9 @@
     <%= f.label :notes %><br>
     <%= f.text_area :notes %>
   </div>
-  <div class="actions">
+  </div>
+  <div class="actions pad">
     <%= f.submit %>
+  </div>
   </div>
 <% end %>
