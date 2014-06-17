@@ -1,14 +1,20 @@
 // Place all the styles related to the Studies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 body {
-  color: blue;
-  background-color: gold;
+  color: #391F08;
+  background-color: #FDFFD3;
   height: auto;
   font-size: 12pt;
   line-height: 18px;
-  border: 20px solid blue;
+  border: 20px solid #662B01;
 /* 
   color: rgba(6, 72, 133, 0.85);
   font-family: verdana, arial, helvetica, sans-serif;
@@ -19,8 +25,8 @@ body {
  */
 }
 .studies_nav {
-  height: 60px;
-  background-color: white;
+  height: 100px;
+  background: url("old-library-crop.jpg");
   padding: 10px;
 }
 .pad {
@@ -29,18 +35,18 @@ body {
 
 .btn-blue {
   color: gold;
-  background-color: blue;
-  border-color: blue;
+  background-color: #301100;
+  border-color: #301100;
 }
 
 .btn-yellow {
   color: black;
-  background-color: gold;
-  border-color: blue;
+  background-color: #DB9649;
+  border-color: #301100;
 }
 
 .btn-white {
   color: blue;
-  background-color: white;
-  border-color: blue;
+  background-color: #993213;
+  border-color: #301100;
 }

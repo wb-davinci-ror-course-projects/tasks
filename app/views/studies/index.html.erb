@@ -1,13 +1,13 @@
 <%= stylesheet_link_tag "studies" %>
 <ul class="nav nav-pills pull-center studies_nav">
-  <li><%= link_to 'New Study Task', new_study_path, {:style=>'color:blue;', :class => "btn btn-white"} %></li>
-  <li><%= link_to 'Home', tasks_path, {:style=>'color:yellow;', :class => "btn btn-blue"} %></li>
-  <li><%= link_to 'Links', links_path, {:style=>'color:yellow;', :class => 'btn btn-blue'} %></li>
-  <li><%= link_to 'Blogs', blog_links_path, {:style=>'color:yellow;', :class => 'btn btn-blue'} %></li>
-  <li><%= link_to 'Timeline', timelines_path, {:style=>'color:yellow;', :class => 'btn btn-blue'} %></li>
+  <li><%= link_to 'New Study Task', new_study_path, {:style=>'color:#FDFFD3;', :class => "btn btn-white"} %></li>
+  <li><%= link_to 'Home', tasks_path, {:style=>'color:#FDFFD3;', :class => "btn btn-blue"} %></li>
+  <li><%= link_to 'Links', links_path, {:style=>'color:#FDFFD3;', :class => 'btn btn-blue'} %></li>
+  <li><%= link_to 'Blogs', blog_links_path, {:style=>'color:#FDFFD3;', :class => 'btn btn-blue'} %></li>
+  <li><%= link_to 'Timeline', timelines_path, {:style=>'color:#FDFFD3;', :class => 'btn btn-blue'} %></li>
   <% x = 1 %>
   <% while x > 0 && x < 4 %>
-    <li><a class="btn btn-yellow" style="color: blue; "href="/practice<%= x %>">Practice<%= x %></a></li>
+    <li><a class="btn btn-yellow" style="color: #301100; "href="/practice<%= x %>">Practice<%= x %></a></li>
     <% x += 1 %>
   <% end %>
 </ul>
@@ -29,9 +29,9 @@
       <tr>
         <td width="150">
           <% if Time.now >= study.deadline - (60*60*24)%>
-            <p style="color: blue"><b><%= study.name %></b></p>
+            <p style="color: #301100"><b><%= study.name %></b></p>
           <% elsif Time.now <= study.deadline - (60*60*24*15)%>
-            <p style="color: silver"><%= study.name %></p>
+            <p style="color: #EE8446"><%= study.name %></p>
           <% else %>
             <%= study.name %>
           <% end %>
@@ -42,9 +42,9 @@
         <td><%= study.category %></td>
         <td><a href="http://<%= study.links %>"><%= study.links.chars[0..10].join %></a></td>
         <td><%= study.notes.chars[0..10].join %></td>
-        <td class="pad"><%= link_to 'Show', study, {:style=>'color:yellow;', :class => 'btn btn-blue'} %></td>
-        <td><%= link_to 'Edit', edit_study_path(study), {:style=>'color:blue;', :class => 'btn btn-yellow'} %></td>
-        <td><%= link_to 'Destroy', study, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-white', :style =>'color:blue;' %></td>
+        <td class="pad"><%= link_to 'Show', study, {:style=>'color:#FDFFD3;', :class => 'btn btn-blue'} %></td>
+        <td><%= link_to 'Edit', edit_study_path(study), {:style=>'color:#301100;', :class => 'btn btn-yellow'} %></td>
+        <td><%= link_to 'Destroy', study, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-white', :style =>'color:#FDFFD3;' %></td>
       </tr>
     <% end %>
   </tbody>
