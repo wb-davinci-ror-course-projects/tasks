@@ -1,8 +1,5 @@
 <%= stylesheet_link_tag "tasks" %>
-  <div class="task_header pull-left">
-    <h1 style="color: #1E5A53; text-shadow: 1px 4px 1px white;"><%= Date.today.strftime( "%A" ) %><i>tasks</i></h1>
-  </div>
-  <ul class="nav nav-pills pull-right task_nav"> 
+  <ul class="nav nav-pills task_nav"> 
       <li><%= link_to 'New Task', new_task_path, {:style=>'color:#1E5A53;', :class => 'btn btn-default'} %></li>
       <li><%= link_to "Career", careers_path(:priority), {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
       <li><%= link_to 'Study', studies_path, {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
@@ -13,7 +10,8 @@
       <li><a class="btn btn-default" style="color: #5BDCEB;" href="http://www.weather.com/weather/hourbyhour/graph/80227">Weather</a></li>
       <li><a class="btn btn-default" style="color: #5BDCEB;" href="http://finance.yahoo.com/q;_ylt=AsCON6EETHyuQCXV57HQ93Inv7gF?uhb=uh3_finance_vert_gs_ctrl2&fr=uh3_finance_vert_gs_ctrl2_e&type=2button&s=c">Quote</a></li>
 </ul>
-<div>
+    <h1 style="color: #1E5A53; text-shadow: 1px 4px 1px white;"><%= Date.today.strftime( "%A" ) %><i>tasks</i></h1>
+
 <table class="table-striped">
   <thead>
     <tr>

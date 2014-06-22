@@ -11,17 +11,19 @@
     <% x += 1 %>
   <% end %>
 </ul>
-<h1>To Study</h1><br>
-<table class="table-striped">
+<div class="title_bar">
+  <b>Studying</b><br>
+</div>
+<table class="table-striped pad">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Next up</th>
-      <th>Deadline</th>
-      <th>Priority</th>
-      <th>Category</th>
-      <th>Links</th>
-      <th>Notes</th>
+      <th class="pad">Name</th>
+      <th class="pad">Next up</th>
+      <th class="pad">Day</th>
+      <th class="pad">Priority</th>
+      <th class="pad">Category</th>
+      <th class="pad">Links</th>
+      <th class="pad">Notes</th>
     </tr>
   </thead>
   <tbody>
@@ -36,15 +38,15 @@
             <%= study.name %>
           <% end %>
         </td>
-        <td><%= study.next_up.chars[0..20].join %></td>
-        <td><center><%= study.deadline.strftime("%d") %></center></td>
-        <td><center><%= study.priority %></center></td>
-        <td><%= study.category %></td>
-        <td><a href="http://<%= study.links %>"><%= study.links.chars[0..10].join %></a></td>
-        <td><%= study.notes.chars[0..10].join %></td>
+        <td class="pad"><%= study.next_up.chars[0..20].join %></td>
+        <td class="pad"><center><%= study.deadline.strftime("%d") %></center></td>
+        <td class="pad"><center><%= study.priority %></center></td>
+        <td class="pad"><%= study.category %></td>
+        <td class="pad"><a href="http://<%= study.links %>"><%= study.links.chars[0..10].join %></a></td>
+        <td class="pad"><%= study.notes.chars[0..10].join %></td>
         <td class="pad"><%= link_to 'Show', study, {:style=>'color:#FDFFD3;', :class => 'btn btn-blue'} %></td>
-        <td><%= link_to 'Edit', edit_study_path(study), {:style=>'color:#301100;', :class => 'btn btn-yellow'} %></td>
-        <td><%= link_to 'Destroy', study, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-white', :style =>'color:#FDFFD3;' %></td>
+        <td class="pad"><%= link_to 'Edit', edit_study_path(study), {:style=>'color:#301100;', :class => 'btn btn-yellow'} %></td>
+        <td class="pad"><%= link_to 'Destroy', study, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-white', :style =>'color:#FDFFD3;' %></td>
       </tr>
     <% end %>
   </tbody>

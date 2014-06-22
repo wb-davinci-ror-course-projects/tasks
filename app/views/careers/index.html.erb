@@ -1,5 +1,8 @@
-<h1>Career Reference</h1>
-<%= link_to 'Home', tasks_path, {:style=>'color:white;', :class => "btn btn-dirt"} %>
+<%= stylesheet_link_tag "careers" %>
+<ul class="nav nav-pills pull-center careers_nav">
+<%= link_to 'Home', tasks_path, {:style=>'color:white;', :class => "btn btn-blue"} %>
+</ul>
+<p class="title_bar">Career Reference</p>
 <table class="table-striped">
   <thead>
     <tr>
@@ -26,9 +29,9 @@
         <td><%= career.materials %></td>
         <td><center><%= career.priority %></center></td>
         <td><center><%= career.last_worked_on.strftime("%d") %></center></td>
-        <td><%= link_to 'Show', career, {:style=>'color:white;', :class => 'btn btn-success'}  %></td>
-        <td><%= link_to 'Edit', edit_career_path(career), {:style=>'color:white;', :class => 'btn btn-info'}  %></td>
-        <td><%= link_to 'Destroy', career, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-primary', :style => 'color: white;' %></td>
+        <td><%= link_to 'Show', career, {:style=>'color:white;', :class => 'btn btn-blue'}  %></td>
+        <td><%= link_to 'Edit', edit_career_path(career), {:style=>'color:white;', :class => 'btn btn-white'}  %></td>
+        <td><%= link_to 'Destroy', career, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-red', :style => 'color: white;' %></td>
       </tr>
     <% end %>
   </tbody>

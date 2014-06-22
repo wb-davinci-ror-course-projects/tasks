@@ -1,5 +1,8 @@
-<h1>Listing links</h1>
-<%= link_to 'Home', tasks_path, {:style=>'color:white;', :class => "btn btn-dirt"} %>
+<%= stylesheet_link_tag "studies" %>
+<div class="title_bar">
+<p>Listing links</p>
+</div>
+<%= link_to 'Home', tasks_path, {:style=>'color:white;', :class => "btn btn-white"} %>
 <table>
   <thead>
     <tr>
@@ -20,13 +23,13 @@
     <% @links.each do |link| %>
       <tr>
       <% if link.address.chars[0..6].join == "http://" || link.address.chars[0..7].join == "https://" %>
-        <td><a href="<%= link.address %>"><%= link.address %></a></td>
+        <td width="150"><a href="<%= link.address %>"><%= link.address.chars[0..10].join %></a></td>
       <% else %>
-        <td><a href="http://<%= link.address %>"><%= link.address %></a></td>
+        <td width="150"><a href="http://<%= link.address %>"><%= link.address.chars[0..10].join %></a></td>
       <% end %>
         <td><%= link.category %></td>
         <td><%= link.description %></td>
-        <td><%= link.notes %></td>
+        <td><%= link.notes.chars[0..54].join %></td>
         <td><%= link.rank %></td>
         <td><%= link.language %></td>
         <td><%= link.visited %></td>
