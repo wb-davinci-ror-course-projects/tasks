@@ -1,0 +1,77 @@
+// Place all the styles related to the FitPosts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  /*background-color: #06346B;*/
+  background-color: #C6BF71;
+  color: #731817;
+  text_shadow: 2px 2px 2px black;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 18px;
+  padding: 10px;
+  border: 10px solid #115F6C;
+  box-shadow: 2px 5px 2px gray;
+  height: 500px;
+  width: 900px;
+}
+
+.header {
+  background: url("challenge.jpg");
+  height: 100px;
+  font-family: moonspace;
+  padding: 25px;
+}
+
+/* 
+nav ul, ul.menu {s
+  list-style: none;
+}
+ */
+ .btn-black {
+  color: white;
+  background-color:#2F2315;
+  border-color: white;
+}
+
+.btn-silver {
+  color: white;
+  background-color: #DBD3BC;
+  border-color: black;
+}
+.btn-gray {
+  color: white;
+  background-color: #CFBA8F;
+  border-color: black;
+}
+.btn-white {
+  color: #002041;
+  background-color: #002041;
+  border-color: #002041;
+}
+
+.btn-orange {
+  color: white;
+  background-color: #C2AA30;
+  border-color: white;
+}
+
+.btn-blue {
+  color: white;
+  background-color: #AFD3E3;
+  border-color: white;
+}
+
+.tds {
+  text-align: center;
+  width: 100pt;
+}

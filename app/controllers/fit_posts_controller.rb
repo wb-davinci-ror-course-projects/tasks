@@ -6,7 +6,14 @@ class FitPostsController < ApplicationController
   def index
     @fit_posts = FitPost.order(:date).reverse
   end
-
+  
+  def challenge
+    if FitPost.last.check_weight != nil
+      @check_weight = FitPost.last.check_weight
+    else
+      @check_weight = 145
+    end
+  end
   # GET /fit_posts/1
   # GET /fit_posts/1.json
   def show
@@ -25,7 +32,7 @@ class FitPostsController < ApplicationController
   # POST /fit_posts.json
   def create
     @fit_post = FitPost.new(fit_post_params)
-
+    @fit_post.check_weight = 170.5
     respond_to do |format|
       if @fit_post.save
         format.html { redirect_to @fit_post, notice: 'Fit post was successfully created.' }

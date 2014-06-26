@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140612223401) do
+ActiveRecord::Schema.define(version: 20140626194126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140612223401) do
     t.integer  "snack_cals"
     t.string   "snacks"
     t.integer  "user_id"
+    t.float    "check_weight"
   end
 
   create_table "links", force: true do |t|

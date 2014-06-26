@@ -1,16 +1,16 @@
 <%= stylesheet_link_tag "tasks" %>
   <ul class="nav nav-pills task_nav"> 
-      <li><%= link_to 'New Task', new_task_path, {:style=>'color:#1E5A53;', :class => 'btn btn-default'} %></li>
+      <li><%= link_to 'New Task', new_task_path, {:style=>'color:#7D7665;', :class => 'btn btn-default'} %></li>
       <li><%= link_to "Career", careers_path(:priority), {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
       <li><%= link_to 'Study', studies_path, {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
       <li><%= link_to 'Fit Post', fit_posts_path, {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
-      <li><%= link_to "Priority", tasks_path(:priority), {:style=>'color:#927017;', :class => 'btn btn-info'} %></li>
-      <li><%= link_to 'Archive', archive_path, {:style=>'color:#927017;', :class => 'btn btn-info'} %></li>
-      <li><a class="btn btn-info" style="color: #927017;" href="/tasks/calendar">Calendar</a></li>
-      <li><a class="btn btn-default" style="color: #5BDCEB;" href="http://www.weather.com/weather/hourbyhour/graph/80227">Weather</a></li>
-      <li><a class="btn btn-default" style="color: #5BDCEB;" href="http://finance.yahoo.com/q;_ylt=AsCON6EETHyuQCXV57HQ93Inv7gF?uhb=uh3_finance_vert_gs_ctrl2&fr=uh3_finance_vert_gs_ctrl2_e&type=2button&s=c">Quote</a></li>
+      <li><%= link_to "Priority", tasks_path(:priority), {:style=>'color:white;', :class => 'btn btn-info'} %></li>
+      <li><%= link_to 'Archive', archive_path, {:style=>'color:white;', :class => 'btn btn-info'} %></li>
+      <li><a class="btn btn-info" style="color: white;" href="/tasks/calendar">Calendar</a></li>
+      <li><a class="btn btn-default" style="color: #3579A5;" href="http://www.weather.com/weather/hourbyhour/graph/80227">Weather</a></li>
+      <li><a class="btn btn-default" style="color: #3579A5;" href="http://finance.yahoo.com/q;_ylt=AsCON6EETHyuQCXV57HQ93Inv7gF?uhb=uh3_finance_vert_gs_ctrl2&fr=uh3_finance_vert_gs_ctrl2_e&type=2button&s=c">Quote</a></li>
 </ul>
-    <h1 style="color: #1E5A53; text-shadow: 1px 4px 1px white;"><%= Date.today.strftime( "%A" ) %><i>tasks</i></h1>
+    <h1 style="color: #7D7665; text-shadow: 1px 4px 1px white;"><%= Date.today.strftime( "%A" ) %><i>tasks</i></h1>
 
 <table class="table-striped">
   <thead>
@@ -39,7 +39,7 @@
         </td>
         <td width="150">
           <% if Time.now >= task.deadline - (60*60*24)%>
-            <p style="color: #927017"><b><%= task.name %></b></p>
+            <p style="color: #7D7665"><b><%= task.name %></b></p>
           <% elsif Time.now <= task.deadline - (60*60*24*15)%>
             <p style="color: silver"><%= task.name %></p>
           <% else %>
@@ -48,13 +48,13 @@
         </td>
         <td width="120"><b><%= task.deadline.strftime("%a, %d @ %H:%M") %></b></td>
         <% if task.priority == 1 %>
-          <td width="50"><center><p style="color: #927017"><b><%= task.priority %></b></p></center></td>
+          <td width="50"><center><p style="color: #7D7665"><b><%= task.priority %></b></p></center></td>
         <% else %>
           <td width="50"><center><%= task.priority %></center></td>
         <% end %>
         <td width="170"><p><%= task.notes.chars[0..20].join %></p>
         <% if task.notes.length > 20 %>
-          <u><a href="/tasks/notes/<%= task.id %>" style="color: #927017">more...</a></u></td>
+          <u><a href="/tasks/notes/<%= task.id %>" style="color: #7D7665">more...</a></u></td>
         <% end %>
        <td width="110"> <a style="color: #927017;" href="http://<%= task.links %>"><%= task.links.chars[0..12].join %><a></td>
         <td width="110"><p><%= task.category.chars[0..12].join %></p></td>
@@ -72,7 +72,7 @@
 <br />
 <% Study.all.each do |s| %>
   <% if s.priority == 1 && DateTime.now >= s.deadline %>
-    <b style="color: #927017"><%= "FYI - Study Task '#{s.name}' is due today" %></b>
+    <b style="color: #7D7665"><%= "FYI - Study Task '#{s.name}' is due today" %></b>
   <% end %>
 <% end %>
 </div>
