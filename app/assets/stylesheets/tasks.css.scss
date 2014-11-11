@@ -31,10 +31,15 @@ body {
 
 .task_nav {
   height: 125px;
-  background: url("tasks_crop.jpg");
+  background: url("sedona_sky.jpg");
   padding: 10px;
 }
-
+.round-this {
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: transparent;
+  height: 70px;
+}
 /* 
 #this will style all figcaptions in app this way
 section#trailReviews figcaption {
@@ -168,4 +173,12 @@ section#trailReviews figcaption {
   color: white;
   background-color: #3579A5;
   border-color: white;
+}
+
+.center-this {
+  text-align: center;
+}
+
+.pad {
+  padding: 10px;
 }

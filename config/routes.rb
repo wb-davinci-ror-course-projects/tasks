@@ -1,5 +1,7 @@
 Mine::Application.routes.draw do
 
+  resources :projects
+
   resources :blog_links
 
   resources :timelines

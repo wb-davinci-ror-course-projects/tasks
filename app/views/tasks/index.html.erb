@@ -1,64 +1,65 @@
-<%= stylesheet_link_tag "tasks" %>
-  <ul class="nav nav-pills task_nav"> 
-      <li><%= link_to 'New Task', new_task_path, {:style=>'color:#7D7665;', :class => 'btn btn-default'} %></li>
-      <li><%= link_to "Career", careers_path(:priority), {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
-      <li><%= link_to 'Study', studies_path, {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
-      <li><%= link_to 'Fit Post', fit_posts_path, {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
-      <li><%= link_to "Priority", tasks_path(:priority), {:style=>'color:white;', :class => 'btn btn-info'} %></li>
-      <li><%= link_to 'Archive', archive_path, {:style=>'color:white;', :class => 'btn btn-info'} %></li>
-      <li><a class="btn btn-info" style="color: white;" href="/tasks/calendar">Calendar</a></li>
-      <li><a class="btn btn-default" style="color: #3579A5;" href="http://www.weather.com/weather/hourbyhour/graph/80227">Weather</a></li>
-      <li><a class="btn btn-default" style="color: #3579A5;" href="http://finance.yahoo.com/q;_ylt=AsCON6EETHyuQCXV57HQ93Inv7gF?uhb=uh3_finance_vert_gs_ctrl2&fr=uh3_finance_vert_gs_ctrl2_e&type=2button&s=c">Quote</a></li>
+<%= stylesheet_link_tag 'tasks' %>
+<ul class='nav nav-pills task_nav round-this'>
+  <li><%= link_to 'New Task', new_task_path, {:style=>'color:#7D7665;', :class => 'btn btn-default'} %></li>
+  <li><%= link_to 'Projects', projects_path, {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
+  <li><%= link_to 'Career', careers_path(:priority), {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
+  <li><%= link_to 'Study', studies_path, {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
+  <li><%= link_to 'Fit Post', fit_posts_path, {:style=>'color:white;', :class => 'btn btn-dirt'} %></li>
+  <li><%= link_to 'Priority', tasks_path(:priority), {:style=>'color:white;', :class => 'btn btn-info'} %></li>
+  <li><%= link_to 'Archive', archive_path, {:style=>'color:white;', :class => 'btn btn-info'} %></li>
+  <li><a class='btn btn-info' style='color: white;' href='/tasks/calendar'>Calendar</a></li>
+  <li><a class='btn btn-default' style='color: #3579A5;' href='http://www.weather.com/weather/hourbyhour/graph/80227'>Weather</a></li>
+  <li><a class='btn btn-default' style='color: #3579A5;' href='http://finance.yahoo.com/q;_ylt=AsCON6EETHyuQCXV57HQ93Inv7gF?uhb=uh3_finance_vert_gs_ctrl2&fr=uh3_finance_vert_gs_ctrl2_e&type=2button&s=c'>Quote</a></li>
 </ul>
-    <h1 style="color: #7D7665; text-shadow: 1px 4px 1px white;"><%= Date.today.strftime( "%A" ) %><i>tasks</i></h1>
-
-<table class="table-striped">
+<h1 style='color: #7D7665; text-shadow: 1px 4px 1px white;'><%= Date.today.strftime( '%A' ) %><i>tasks</i></h1>
+<table class='table-striped'>
   <thead>
     <tr>
       <th></th>
-      <th class="pad"><center>Name</center></th>
-      <th><center>Deadline</center></th>
-      <th><center>Priority</center></th>
-      <th><center>Notes</center></th>
-      <th><center>Link</center></th>
-      <th><center>Category</center></th>
-      <th><center>Contact</center></th>
+      <th class='pad center-this'>
+          Name</th>
+      <th>Deadline</th>
+      <th>Priority</th>
+      <th>Notes</th>
+      <th>Link</th>
+      <th>Category</th>
+      <th>Contact</th>
     </tr>
   </thead>
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
       <% if task.completed == false %>
-        <td  width="50"><div class="field">
+        <td  width='50'><div class='field'>
           <% if DateTime.now.day == task.updated_at.day %>
-            <%= check_box_tag :done_for_today, "", task.done_for_today %>
+            <%= check_box_tag :done_for_today, '', task.done_for_today %>
           <% else %>
-            <%= check_box_tag :done_for_today, "", false %>
+            <%= check_box_tag :done_for_today, '', false %>
           <% end %>
             </div>
         </td>
-        <td width="150">
+        <td width='150'>
           <% if Time.now >= task.deadline - (60*60*24)%>
-            <p style="color: #7D7665"><b><%= task.name %></b></p>
+            <p style='color: #7D7665'><b><%= task.name %></b></p>
           <% elsif Time.now <= task.deadline - (60*60*24*15)%>
-            <p style="color: silver"><%= task.name %></p>
+            <p style='color: silver'><%= task.name %></p>
           <% else %>
             <%= task.name %>
           <% end %>
         </td>
-        <td width="120"><b><%= task.deadline.strftime("%a, %d @ %H:%M") %></b></td>
+        <td width='120'><b><%= task.deadline.strftime('%a, %d @ %H:%M') %></b></td>
         <% if task.priority == 1 %>
-          <td width="50"><center><p style="color: #7D7665"><b><%= task.priority %></b></p></center></td>
+          <td class='center-this' width='50'><p style='color: #7D7665'><b><%= task.priority %></b></p></td>
         <% else %>
-          <td width="50"><center><%= task.priority %></center></td>
+          <td class='center-this' width='50'><%= task.priority %></td>
         <% end %>
-        <td width="170"><p><%= task.notes.chars[0..20].join %></p>
+        <td width='170'><p><%= task.notes.chars[0..20].join %></p>
         <% if task.notes.length > 20 %>
-          <u><a href="/tasks/notes/<%= task.id %>" style="color: #7D7665">more...</a></u></td>
+          <u><a href='/tasks/notes/<%= task.id %>' style='color: #7D7665'>more...</a></u></td>
         <% end %>
-       <td width="110"> <a style="color: #927017;" href="http://<%= task.links %>"><%= task.links.chars[0..12].join %><a></td>
-        <td width="110"><p><%= task.category.chars[0..12].join %></p></td>
-        <td width="110"><%= task.contact %></td>
+        <td width='110'> <a style="color: #927017;" href="http://<%= task.links %>"><%= task.links.chars[0..12].join %><a></td>
+        <td width='110'><p><%= task.category.chars[0..12].join %></p></td>
+        <td width='110'><%= task.contact %></td>
         <td><%= link_to 'Show', task, {:style=>'color:white;', :class => 'btn btn-forest'} %></td>
         <td><%= link_to 'Edit', edit_task_path(task), {:style=>'color:white;', :class => 'btn btn-dirt'} %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-info', :style => 'color: white;'%></td>
@@ -67,20 +68,13 @@
     <% end %>
   </tbody>
 </table>
-</div>
-<div>
-<br />
+<div><br/>
 <% Study.all.each do |s| %>
   <% if s.priority == 1 && DateTime.now >= s.deadline %>
     <b style="color: #7D7665"><%= "FYI - Study Task '#{s.name}' is due today" %></b>
   <% end %>
 <% end %>
 </div>
-
 <div class="flickr_pagination">
   <%= will_paginate @tasks %>
 </div>
-
-TO DO: make notes like editable blog posts, scaffold user
-
-

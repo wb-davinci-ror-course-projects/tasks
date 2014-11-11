@@ -1,14 +1,19 @@
-<%= stylesheet_link_tag "challenge" %>
-<header class="header" >
-<center><p class="pad" style="font-family: moonspace; font-size: 40px; color: #731817; text-shadow: 2px 2px 2px white;">Challenge</p></center>
-<nav>
-<%= link_to 'Home', tasks_path, {:style=>'color:white;', :class => "btn btn-orange"} %>
-</nav>
-</header>
+<%= stylesheet_link_tag 'challenge' %>
+<header class='header' >
+  <p class='pad center-this' style='font-family: moonspace; font-size: 40px; color: #731817; text-shadow: 2px 2px 2px white;'>Challenge</p>
+  <nav>
+  <%= link_to 'Home', tasks_path, {:style=>'color:white;', :class => 'btn btn-orange'} %>
+  </nav>
+</header></br>
 
-<%= @check_weight %><br>
-Last Weigh In: <%= FitPost.last.weight %><br>
-Next Weigh In: <%= FitPost.last.weight %> or lower.<br>
-Exception:<%= FitPost.last.weight %><br>
+<div class='jumbotron center-this'>
+  <h3>MTB - Make it to the top of Mt Falcon without clipping out!</h3>
+</div>
+
+<!--
+<%#= @check_weight %><br>
+Last Weigh In: <%#= FitPost.last.weight %><br>
+Next Weigh In: <%#= FitPost.last.weight %> or lower.<br>
+Exception:<%#= FitPost.last.weight %><br>
 
 Need to work on number field for check weight. Hard coded in controller at the moment
