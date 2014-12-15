@@ -54,5 +54,4 @@ end
       location.longitude = @response.longitude
     end
   end
-  
 end
