@@ -1,20 +1,23 @@
 Mine::Application.routes.draw do
 
-  resources :projects
+root 'tasks#index'
 
-  resources :blog_links
+resources :projects
 
-  resources :timelines
+resources :blog_links
 
-  resources :users
+resources :timelines
 
-  resources :links
+resources :users
 
-  resources :careers
+resources :links
 
-  resources :studies
+resources :careers
 
-  resources :fit_posts
+resources :studies
+
+resources :fit_posts
+
 get "/trails" =>  "tasks#trails", as: "trails"  
 get "/tasks/calendar" =>  "tasks#calendar", as: "calendar"
 get "/tasks/archive" =>  "tasks#archive", as: "archive"
