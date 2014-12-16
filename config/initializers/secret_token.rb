@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Mine::Application.config.secret_key_base = Rails.env.production? ? ENV['SESSION SECRET'] : '8d4cc835d9bdd22e80ee05566193cd0bf3ab8fd80da72cb2dce138d367d1be732d93457b5a8d35a8f46e432301819afb4ba7426cc6c5c5278ec67acd76cd6bdb'
+Mine::Application.config.secret_key_base = Rails.env.production? ? ENV['SESSION SECRET'] : 'f693711bdf4e043c79fbfba36397e077d107027a3e6b9b4c2fea6e617f762a7b8c556ab43c5b20395ab866057b635d1d8f0b8b01f8836d4c85f12d874357cc7'
