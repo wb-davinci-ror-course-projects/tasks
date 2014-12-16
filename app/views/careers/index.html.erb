@@ -13,19 +13,15 @@
       <th>Materials</th>
       <th>Priority</th>
       <th>Last worked on</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @careers.each do |career| %>
       <tr>
         <td><%= career.area %></td>
         <td><%= career.next_up %></td>
         <td><%= career.notes.chars[0..20].join %></td>
-        <td><a href="http://<%= career.links %>"><%= career.links %></a></td>
+        <td><%= link_to career.links, "http://#{career.links}" %></td>
         <td><%= career.materials %></td>
         <td><center><%= career.priority %></center></td>
         <td><center><%= career.last_worked_on.strftime("%d") %></center></td>
@@ -35,8 +31,5 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-
-<br>
-
+</table><br>
 <%= link_to 'New Career Item', new_career_path %>
