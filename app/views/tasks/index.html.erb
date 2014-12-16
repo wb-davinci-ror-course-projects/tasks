@@ -29,7 +29,7 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody style='text-align: center;'>
     <% @tasks.each do |task| %>
       <tr>
       <% if task.completed == false %>
@@ -50,7 +50,7 @@
             <%= task.name %>
           <% end %>
         </td>
-        <td width='120'><b><%= task.deadline.strftime('%a, %d @ %H:%M') %></b></td>
+        <td width='120'><b><%= task.deadline.strftime('%a, %d, %H:%M') %></b></td>
         <% if task.priority == 1 %>
           <td class='center-this' width='50'><p style='color: #7D7665'><b><%= task.priority %></b></p></td>
         <% else %>
