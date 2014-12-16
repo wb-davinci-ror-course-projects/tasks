@@ -1,5 +1,4 @@
 # class Location < ActiveRecord::Base
-#
 # # geocoded_by :city do |obj,results|
 # #     if geo = results.first
 # #       obj.street = geo.address.split(', ').first
